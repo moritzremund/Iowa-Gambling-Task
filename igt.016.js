@@ -79,7 +79,7 @@ $(function () {
     $("#emailResultsTo").val(getParameterByName('email_results_to')); //get the query string value for auto address filling :)
 	$("#subjectID").val(getParameterByName('mail_subject')); //get the query strung for the subject for the email. 
 	
-    $('#modal-splash').modal('show'); //show the instructions modal on first load
+    // $('#modal-splash').modal('show'); //show the instructions modal on first load
 
     $("#emailBtn").click(function () {
         email_address = $("#emailResultsTo").val();			
