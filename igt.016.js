@@ -216,7 +216,13 @@ $(function () {
             $("#modal-gameend").modal('show');              //show the game end modal  
             var prettyprnt = selectedCards.join(", ");      //setup pretty printing
             $("#testresults").html(prettyprnt);             //output the pretty print            
-            mail_attachment = prettyprnt.replace(/\s+/g, ""); //remove all white space
+            mail_attachment = prettyprnt.replace(/\s+/g, "");
+
+// Send the result to Qualtrics parent window
+window.parent.postMessage(
+  { type: "IGT_RESULTS", data: mail_attachment },
+  "*"
+);
         }
     });
 });
