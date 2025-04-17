@@ -73,6 +73,7 @@ function getParameterByName(name) {
 
 //rewards preprogramed pentalties are higher for deck A & B.
 $(function () {
+	$('#modal-splash').modal('hide');
     $("#game_version").html(GAME_VERSION);
     $("#testresults").hide();
     $(".spinner").hide();    
