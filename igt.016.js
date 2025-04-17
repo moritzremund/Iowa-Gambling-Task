@@ -218,9 +218,14 @@ $(function () {
             $("#testresults").html(prettyprnt);             //output the pretty print            
             mail_attachment = prettyprnt.replace(/\s+/g, "");
 
-// Send the result to Qualtrics parent window
 window.parent.postMessage(
-  { type: "IGT_RESULTS", data: mail_attachment },
+  {
+    type: "IGT_RESULTS",
+    data: {
+      cards: mail_attachment,
+      cash: totalcash
+    }
+  },
   "*"
 );
         }
